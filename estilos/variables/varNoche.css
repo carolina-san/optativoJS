@@ -1,0 +1,12 @@
+:root {
+    --colorTexto: #e6e1dc; 
+    --colorHeader: #4a4a48; 
+    --colorNav: #4d6978;
+    --colorHoverAzul: #5a979f; 
+    --colorHoverTexto: #f1f1f1; 
+    --line-height: 1.6;
+    --colorBackground: #242424; 
+    --blanco: #e9e9e9; 
+    --gris:#9f9e9e;
+    --fuente2: Arial, sans-serif;
+}

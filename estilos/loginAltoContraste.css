@@ -1,0 +1,10 @@
+@import url('login.css');
+@import url('variables/varColoresContraste.css');
+
+body{
+    >section>form{
+        input,select{
+            border: 1px solid #202020;
+        }
+    }
+}

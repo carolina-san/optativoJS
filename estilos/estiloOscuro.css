@@ -1,0 +1,54 @@
+@import url('estilo.css');
+@import url('variables/varNoche.css');
+
+body>nav{
+    form{
+        >button{
+            background-color: var(--colorHeader);
+            &:hover {
+                background-color: var(--colorTexto);
+                color: var(--colorHeader);
+            }
+        }
+    }
+}
+section > div {
+    button {
+        color: var(--colorBackground); /* Color del texto */
+    }
+    
+}
+section{
+    >ul{
+        >li{
+            background-color: var(--colorHeader);
+            p{
+                color: var(--colorTexto);
+            }
+        }
+    }
+    .info{
+        >article{
+            background-color: var(--colorHeader);
+            >p{
+                color: var(--colorTexto);
+            }
+        }
+    }
+}
+
+body{
+    .mensaje-error{
+        >div{
+            background-color: var(--colorHeader);
+            color: var(--colorTexto);
+            >button{
+                background-color: var(--colorNav);
+                &:hover {
+                    background-color: var(--colorTexto);
+                    color: var(--colorHeader);
+                }
+            }
+        }
+    }
+}

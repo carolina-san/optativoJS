@@ -1,0 +1,13 @@
+@font-face {
+    font-family: fuenteImpresion;
+    src: url("../fuentes/Lora-VariableFont_wght.ttf");
+    font-weight: light;
+}
+:root {
+    --colorTexto:#000;
+    --font-size:12pt;
+    --colorEnlace: #1c136f;
+    --colorBordes:#626262;
+    --borde: 2px solid var(--colorBordes);
+    --line-height: 1.6;
+}

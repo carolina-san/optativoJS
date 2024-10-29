@@ -1,0 +1,27 @@
+@import url('login.css');
+@import url('variables/varNoche.css');
+
+body>nav{
+    form{
+        >button{
+            background-color: var(--colorHeader);
+            &:hover {
+                background-color: var(--colorTexto);
+                color: var(--colorHeader);
+            }
+        }
+    }
+}
+
+section{
+    background-color: var(--colorHeader);
+    >form{
+        >button{
+            background-color: var(--colorNav);
+            &:hover {
+                background-color: var(--colorTexto);
+                color: var(--colorHeader);
+            }
+        }
+    }
+}

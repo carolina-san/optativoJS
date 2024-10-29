@@ -1,0 +1,73 @@
+@import url('estilo.css');
+
+section {
+    max-width: 90%;
+    margin: 2em auto; 
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding:1em;
+    h2{
+        text-align: center;
+        color: var(--colorTexto);
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        margin: 1em;
+        input,select{
+            padding: .8em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom:2em;
+        }
+        label{
+            margin:0;
+        }
+        button{
+            padding: .8em;
+            background-color: var(--colorTexto);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            &:hover{
+                background-color: var(--colorHoverAzul);
+                color:var(--colorTexto);
+            }
+        }
+    }
+}
+
+.radio-group {
+    display: flex; 
+    align-items: center;
+    gap: 1em; 
+    
+    
+    input[type="radio"] {
+        margin-right: 5px; 
+        cursor: pointer;
+        margin-top:2em;
+    }
+}
+
+#mensaje {
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+@media all and (width>=665px){
+    body>nav{
+        display:flex;
+        justify-content: space-between;
+    }
+    body>section{
+        max-width: 600px;
+    }
+}
+

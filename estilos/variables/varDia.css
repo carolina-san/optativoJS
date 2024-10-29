@@ -1,0 +1,18 @@
+@font-face {
+    font-family: fuente;
+    src: url("../fuentes/JosefinSans-VariableFont_wght.ttf");
+    
+}
+
+:root {
+    --colorTexto:#154776;
+    --colorHeader: #ffeec7;
+    --colorNav:#8ebeeb;
+    --colorHoverAzul: #a7d5ff;
+    --colorHoverTexto: #091f34;
+    --line-height: 1.6;
+    --colorBackground: #f4f4f4;
+    --blanco:white;
+    --gris:#666;
+    --fuente2:Arial, sans-serif;
+}

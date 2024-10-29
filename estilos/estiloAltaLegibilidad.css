@@ -1,0 +1,23 @@
+@import url('estilo.css');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
+body {
+    font-family: 'Atkinson Hyperlegible', sans-serif;    
+    font-size: x-large;
+    >nav>ul>li>a>span:last-of-type{
+        font-size: x-large;
+    }
+    nav>form{
+        >input{
+            font-size: large;
+        }
+        >button{
+            font-size: large;
+        }
+    }
+    section>ul>li>h3{
+        font-size: x-large;
+    }
+    section>ul>li>p{
+        font-size: large;
+    }
+}

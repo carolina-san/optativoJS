@@ -1,0 +1,57 @@
+@import url('album.css');
+@import url('variables/varNoche.css');
+
+body>nav{
+    form{
+        >button{
+            background-color: var(--colorHeader);
+            &:hover {
+                background-color: var(--colorTexto);
+                color: var(--colorHeader);
+            }
+        }
+    }
+}
+
+body>section{
+    background-color: var(--colorHeader);
+    >h2,h5{
+        color: var(--colorTexto);
+    }
+    .tabla,#tablaTarifas{
+        color: var(--colorTexto);
+        th{
+            background-color: var(--colorNav);
+            color: var(--colorTexto);
+        }
+        td{
+            background-color: var(--colorHeader);
+            color: var(--colorTexto);
+        }
+    }
+    >div>div>button{
+        background-color: var(--colorNav);
+        &:hover {
+            background-color: var(--colorTexto);
+            color: var(--colorHeader);
+        }
+    }
+    >div>form{
+        background-color: var(--colorNav);
+        >fieldset{
+            background-color: var(--colorNav);
+        }
+        >button{
+            background-color: var(--colorHeader);
+            &:hover {
+                background-color: var(--colorTexto);
+                color: var(--colorHeader);
+            }
+        }
+    }
+}
+body{
+    .respuesta>ul{
+        background-color: var(--colorNav);
+    }
+}

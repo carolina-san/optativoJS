@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P&I - Inicio</title>
+    <link rel="stylesheet" href="estilos/estilo.css" media="screen">
+    <link rel="alternate stylesheet" href="estilos/estiloOscuro.css" title="Modo Noche" media="screen">
+    <link rel="alternate stylesheet" href="estilos/estiloAltaLegibilidad.css" title="Alta Legibilidad" media="screen">
+    <link rel="alternate stylesheet" href="estilos/estiloAltoContraste.css" title="Alto Contraste" media="screen">
+    <link rel="alternate stylesheet" href="estilos/contrasteylegibilidad.css" title="Alto Contraste y Legibilidad" media="screen">
+
+    <link rel="stylesheet" href="css/fontello.css">
+    <link rel="stylesheet" href="estilos/estiloImpresion.css" media="print"> 
+    <script src="script/archivo.js"></script>
+</head>
+<body data-url="https://practicadaw.infinityfreeapp.com/logged.html">
+    <header>
+        <a href="logged.html"><img src="fotos/logodaw.png" alt="Logo de P&I"></a>
+        <a href="logged.html"><h1>P&I - Pictures & Images</h1></a>
+        <select id="selectorEstilo">
+            <option disabled>Selecciona un Estilo:</option>
+            <option value="Modo Dia">Estilo Predeterminado</option>
+            <option value="Modo Noche">Modo Noche</option>
+            <option value="Alta Legibilidad">Alta Legibilidad</option>
+            <option value="Alto Contraste">Alto Contraste</option>
+            <option value="Alto Contraste y Legibilidad">Alto Contraste y Legibilidad</option>
+        </select>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html"><span class="icon-home"></span><span>Inicio</span></a></li>
+            <li><a href="busqueda.html"><span class="icon-search"></span><span>Búsqueda</span></a></li>
+            <li><a href="solicitarAlbum.html"><span class="icon-picture"></span><span>Solicitar Álbum</span></a></li>
+            <li><a href="menuUsuario.html"><span class="icon-user"></span><span>Perfil</span></a></li>
+            <li><a href="index.html"><span class="icon-logout"></span><span>Cerrar Sesión</span></a></li>
+        </ul>
+        <form action="resultado.html" method="get">
+            <input type="text" id="search" name="search" placeholder="Buscar..." required>
+            <button type="submit">Buscar</button>
+        </form>
+    </nav>
+    
+    <section>
+        <h2>Últimas Fotos</h2>
+        <ul>
+            <li>
+                <a href="foto.html"><img src="fotos/foto1.jpg" alt="Foto 1"></a>
+                <h3>Título de la Foto 1</h3>
+                <p>Fecha: </p>
+                <p>País: </p>
+            </li>
+            <li>
+                <a href="foto.html"><img src="fotos/foto2.jpg" alt="Foto 2"></a>
+                <h3>Título de la Foto 2</h3>
+                <p>Fecha: </p>
+                <p>País: </p>
+            </li>
+            <li>
+                <a href="foto.html"><img src="fotos/foto3.jpeg" alt="Foto 3"></a>
+                <h3>Título de la Foto 3</h3>
+                <p>Fecha: </p>
+                <p>País:</p>
+            </li>
+            <li>
+                <a href="foto.html"><img src="fotos/foto4.jpeg" alt="Foto 4"> </a>
+                <h3>Título de la Foto 4</h3>
+                <p>Fecha: </p>
+                <p>País: </p>  
+            </li>
+            <li>
+                <a href="foto.html"> <img src="fotos/foto5.jpeg" alt="Foto 5"></a>
+                <h3>Título de la Foto 5</h3>
+                <p>Fecha:</p>
+                <p>País: </p>
+            </li>
+        </ul>
+    </section>
+    <section class="upload">
+        <h3><span class="icon-camera-outline"></span> Subir foto:</h3>
+        <input type="file" id="foto" name="foto" accept="image/*" >
+    </section>
+   
+
+    <footer>
+        <p>&copy; 2024 Paula Ortuño y Carolina Sánchez</p>
+        <a href="accesibilidad.html">&#8505;  Declaración de accesibilidad</a>
+    </footer>
+</body>
+</html>

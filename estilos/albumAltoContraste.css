@@ -1,0 +1,42 @@
+@import url('album.css');
+@import url('variables/varColoresContraste.css');
+
+body{
+    background-color: var(--colorBackground);
+    >section{
+        background-color: var(--blanco);
+        >div:last-of-type{
+            >form{
+                background-color: var(--colorGris);
+                input, textarea, select{
+                    border: 1px solid #202020;
+                }
+                fieldset{
+                    background-color: var(--colorGris);
+                }
+            }
+        }
+        >div:first-of-type{
+            background-color: var(--colorGris);
+        }
+        table{
+            border: 1px solid #202020;
+            th,td{
+                border: 1px solid #202020;
+            }
+            th{
+                background-color: var(--colorAmarillo);
+            }
+            td{
+                background-color: var(--colorHeader2);
+            }
+        }
+    }
+}
+
+.respuesta{
+    >ul{
+        background-color: var(--colorHeader);
+        border: 1px solid #202020;
+    }
+}

@@ -1,0 +1,192 @@
+@import url('variables/varImpresion.css');
+
+@page {
+    size: A4;
+    margin: 1cm;
+}
+
+html{
+    margin: 1cm;
+}
+
+/* Eliminar elementos no esenciales para la impresión */
+nav, form,.upload {
+    display: none;
+}
+
+/* Ajuste de texto principal */
+body {
+    counter-reset: page;
+    font-family: fuenteImpresion;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    color:var(--colorTexto);
+    margin: 0;
+    padding: 0;
+    display:flex;
+    flex-direction: column;
+    flex-grow: 1;
+    header{
+        display:flex;
+        flex-direction: row;
+        padding:0;
+        margin:0;
+        justify-content: center;
+        h1{
+            margin:0;
+        }
+        img{
+            width:2cm;
+            height: auto;
+            margin-right:5mm;
+        }
+        a:last-of-type:after {
+            content: " (" attr(href) ")";
+            font-size: 10pt;
+            color: var(--colorEnlace);
+        }
+    }
+}
+
+/* Títulos en blanco y negro */
+h1, h2, h3 {
+    color: var(--colorTexto);
+   
+}
+
+/* Estilos para listas en formato cuadrícula */
+ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(4cm, 1fr)); /* 4 columnas como mínimo */
+    gap: 1cm; /* Espacio entre los elementos */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 5mm;
+    li {
+        border-radius: 2mm;
+        border: var(--borde);
+        padding: 0.5cm;
+        text-align: center;
+        h3{
+            font-size: var(--font-size);
+        }
+        p{
+            margin:0;
+        }
+        a:link, a:visited {
+            color: var(--colorEnlace);
+            text-decoration: underline;
+        }
+        
+        a:after {
+            content: " (" attr(href) ")";
+            font-size: 10pt;
+            color: var(--colorEnlace);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            break-inside: avoid;
+        }
+    
+    }
+}
+
+h2, h3,li {
+    break-inside: avoid;
+}
+
+p, h1, h2, h3, li {
+    widows: 3;
+    orphans: 3;
+}
+
+body>section>h2{
+    margin-top:1cm;
+}
+.info{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border:var(--borde);
+    padding: .8cm;
+    border-radius: 2mm;
+    padding-bottom: 5mm;
+    >article>img{
+        width: 12cm;
+    }
+    >article:last-of-type{
+        text-align: center;
+    }
+}
+.resultado::after {
+    content: "(Texto de la búsqueda)";
+    font-size: small;
+    margin-left:5mm;
+}
+
+.respuesta{
+    all:unset;
+    break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin:0;
+    padding:0;
+    >ul{
+        all:unset;
+        padding:1cm;
+        margin-top:5mm;
+        margin-bottom:5mm;
+        display: flex;
+        flex-direction: column;
+        border:var(--borde);
+        border-radius: 2mm;
+        li{
+            all:unset;
+            margin:0;
+            padding:0;
+            >strong,span{
+                display:inline-block;
+                margin:0;
+                padding:0;
+            }
+        }
+    }
+    h3,p{
+        margin:0;
+        padding:0;
+    }
+}
+footer{
+    position: fixed;
+    margin-bottom: 8mm;
+    bottom: 0;
+    left: 0;        
+    width: 100%;
+    text-align: center;
+    font-size:  var(--font-size);
+    display: block;
+    text-align: center;
+    >a{ 
+        display:none;
+    }
+}
+
+body::after{
+    content: "Página impresa desde: " attr(data-url);
+    display: block;
+    margin-bottom:5mm;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: var(--font-size);
+}
+
+
+
+

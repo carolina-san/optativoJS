@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P&I - Resultados de búsqueda</title>
+    <link rel="stylesheet" href="estilos/estilo.css" media="screen">
+    <link rel="alternate stylesheet" href="estilos/estiloOscuro.css" title="Modo Noche" media="screen">
+    <link rel="alternate stylesheet" href="estilos/estiloAltaLegibilidad.css" title="Alta Legibilidad" media="screen">
+    <link rel="alternate stylesheet" href="estilos/estiloAltoContraste.css" title="Alto Contraste" media="screen">
+    <link rel="alternate stylesheet" href="estilos/contrasteylegibilidad.css" title="Alto Contraste y Legibilidad" media="screen">
+    <link rel="stylesheet" href="css/fontello.css">
+    <link rel="stylesheet" href="estilos/estiloImpresion.css" media="print"> 
+    <script src="script/archivo.js"></script>
+</head>
+<body data-url="https://practicadaw.infinityfreeapp.com/resultado.html">
+    <header>
+        <a href="index.html"><img src="fotos/logodaw.png" alt="Logo de P&I"></a>
+        <a href="index.html"><h1>P&I - Pictures & Images</h1></a>
+        <select id="selectorEstilo">
+            <option disabled>Selecciona un Estilo:</option>
+            <option value="Modo Dia">Estilo Predeterminado</option>
+            <option value="Modo Noche">Modo Noche</option>
+            <option value="Alta Legibilidad">Alta Legibilidad</option>
+            <option value="Alto Contraste">Alto Contraste</option>
+            <option value="Alto Contraste y Legibilidad">Alto Contraste y Legibilidad</option>
+        </select>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html"><span class="icon-home"></span><span>Inicio</span></a></li>
+            <li><a href="busqueda.html"><span class="icon-search"></span><span>Búsqueda</span></a></li>
+            <li><a href="login.html"><span class="icon-login"></span><span>Login</span></a></li>
+            <li><a href="registro.html"><span class="icon-registro"></span><span>Registro</span></a></li>
+        </ul>
+        <form action="resultado.html" method="get">
+            <input type="text" id="search" name="search" placeholder="Buscar..." required><!--Barra de búsqueda que redirige a resultado-->
+            <button type="submit">Buscar</button>
+        </form>
+    </nav>
+  
+    <section>
+        <h2 class="resultado">Resultados</h2>
+        <div>
+            <label>Ordenar por:</label>
+            <button id="btnTitulo" class="ordenar" >Título</button>
+            <button id="btnFecha" class="ordenar">Fecha</button>
+            <button  id="btnAutor" class="ordenar">Autor</button>
+            <button id="btnPais" class="ordenar">País</button>
+        </div>
+        <ul id="resultado-lista">
+            <li data-titulo="Foto A" data-fecha="2023-05-20" data-autor="Juan Pérez" data-pais="España">
+                <img src="fotos/foto1.jpg" alt="Foto 1">
+                <h3>Título: Foto A</h3>
+                <p>Fecha: 2023-05-20</p>
+                <p>Autor: Juan Pérez</p>
+                <p>País: España</p>
+            </li>
+            <li data-titulo="Foto B" data-fecha="2021-04-15" data-autor="Ana Gómez" data-pais="Francia">
+                <img src="fotos/foto2.jpg" alt="Foto 2">
+                <h3>Título: Foto B</h3>
+                <p>Fecha: 2021-04-15</p>
+                <p>Autor: Ana Gómez</p>
+                <p>País: Francia</p>
+            </li>
+            <li data-titulo="Foto C" data-fecha="2022-08-10" data-autor="Carlos Ruiz" data-pais="Italia">
+                <img src="fotos/foto3.jpeg" alt="Foto 3">
+                <h3>Título: Foto C</h3>
+                <p>Fecha: 2022-08-10</p>
+                <p>Autor: Carlos Ruiz</p>
+                <p>País: Italia</p>
+            </li>
+        </ul>
+    </section>
+    <footer>
+        <p>&copy; 2024 Paula Ortuño y Carolina Sánchez</p>
+        <a href="accesibilidad.html">&#8505;  Declaración de accesibilidad</a>
+    </footer>
+</body>
+</html>

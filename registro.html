@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P&I - Registro</title>
+    <link rel="stylesheet" href="estilos/login.css" media="screen">
+    <link rel="alternate stylesheet" href="estilos/loginOscuro.css" title="Modo Noche" media="screen">
+    <link rel="alternate stylesheet" href="estilos/loginAltaLegibilidad.css" title="Alta Legibilidad" media="screen">
+    <link rel="alternate stylesheet" href="estilos/loginAltoContraste.css" title="Alto Contraste" media="screen">
+    <link rel="alternate stylesheet" href="estilos/loginConLeg.css" title="Alto Contraste y Legibilidad" media="screen">
+    <link rel="stylesheet" href="css/fontello.css">
+    <script src="script/archivo.js"></script>
+</head>
+<body data-url="https://practicadaw.infinityfreeapp.com/registro.html">
+    <header>
+        <a href="index.html"><img src="fotos/logodaw.png" alt="Logo de P&I"></a>
+        <a href="index.html"><h1>P&I - Pictures & Images</h1></a>
+        <select id="selectorEstilo">
+            <option disabled>Selecciona un Estilo:</option>
+            <option value="Modo Dia">Estilo Predeterminado</option>
+            <option value="Modo Noche">Modo Noche</option>
+            <option value="Alta Legibilidad">Alta Legibilidad</option>
+            <option value="Alto Contraste">Alto Contraste</option>
+            <option value="Alto Contraste y Legibilidad">Alto Contraste y Legibilidad</option>
+        </select>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html"><span class="icon-home"></span><span>Inicio</span></a></li>
+            <li><a href="busqueda.html"><span class="icon-search"></span><span>Búsqueda</span></a></li>
+            <li><a href="login.html"><span class="icon-login"></span><span>Login</span></a></li>
+            <li><a href="registro.html"><span class="icon-registro"></span><span>Registro</span></a></li>
+        </ul>
+        <form action="resultado.html" method="get">
+            <input type="text" id="search" name="search" placeholder="Buscar...">
+            <button type="submit">Buscar</button>
+        </form>
+    </nav>
+    <section> 
+        <h2>Crear una cuenta</h2>
+        <form id="registroForm" action="logged.html" method="post">
+            <label for="nombre">Nombre de usuario:</label>
+            <input type="text" id="nombre" name="nombre">
+            
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password">
+            
+            <label for="reppassword">Repetir contraseña:</label>
+            <input type="password" id="reppassword" name="reppassword">
+            
+            <label for="correo">Correo electrónico:</label>
+            <input type="text" id="correo" name="correo" placeholder="ejemplo@dominio.es">
+            
+            <div class="radio-group" id="sexo">
+                <label>Sexo:</label>
+                <input type="radio" id="mujer" name="sexo" value="M">
+                <label for="mujer">M</label>
+
+                <input type="radio" id="hombre" name="sexo" value="H">
+                <label for="hombre">H</label>
+            </div>
+
+            <label for="fecha">Fecha de nacimiento:</label>
+            <input type="text" id="fecha" name="fecha" placeholder="DD/MM/YYYY">
+
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad">
+
+            <label for="pais">País de residencia:</label>
+            <select id="pais" name="pais">
+                <option value="" disabled selected>Selecciona un país</option>
+                <option value="España">España</option>
+                <option value="México">México</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Chile">Chile</option>
+                <option value="Perú">Perú</option>
+                <option value="Estados Unidos">Estados Unidos</option>
+                <option value="Francia">Francia</option>
+                <option value="Italia">Italia</option>
+                <option value="Alemania">Alemania</option>
+                <option value="Otro">Otro</option>
+            </select>
+
+            <label for="foto">Foto de perfil:</label>
+            <input type="file" id="foto" name="foto" accept="image/*">
+            
+            <button type="submit">Registrarse</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Paula Ortuño y Carolina Sánchez</p>
+        <a href="accesibilidad.html">&#8505;  Declaración de accesibilidad</a>
+    </footer>
+</body>
+</html>

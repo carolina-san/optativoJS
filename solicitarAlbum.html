@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P&I - Solicitar Álbum</title>
+    <link rel="stylesheet" href="estilos/album.css" media="screen">
+    <link rel="alternate stylesheet" href="estilos/albumOscuro.css" title="Modo Noche" media="screen">
+    <link rel="alternate stylesheet" href="estilos/albumAltaLegibilidad.css" title="Alta Legibilidad" media="screen">
+    <link rel="alternate stylesheet" href="estilos/albumAltoContraste.css" title="Alto Contraste" media="screen">
+    <link rel="alternate stylesheet" href="estilos/albumConLeg.css" title="Alto Contraste y Legibilidad" media="screen">
+    <link rel="stylesheet" href="css/fontello.css">
+    <script src="script/archivo.js"></script>
+</head>
+<body data-url="https://practicadaw.infinityfreeapp.com/solicitarAlbum.html"> 
+    <header>
+        <a href="logged.html"><img src="fotos/logodaw.png" alt="Logo de P&I"></a>
+        <a href="logged.html"><h1>P&I - Pictures & Images</h1></a>
+        <select id="selectorEstilo">
+            <option disabled>Selecciona un Estilo:</option>
+            <option value="Modo Dia">Estilo Predeterminado</option>
+            <option value="Modo Noche">Modo Noche</option>
+            <option value="Alta Legibilidad">Alta Legibilidad</option>
+            <option value="Alto Contraste">Alto Contraste</option>
+            <option value="Alto Contraste y Legibilidad">Alto Contraste y Legibilidad</option>
+        </select>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html"><span class="icon-home"></span><span>Inicio</span></a></li>
+            <li><a href="busqueda.html"><span class="icon-search"></span><span>Búsqueda</span></a></li>
+            <li><a href="solicitarAlbum.html"><span class="icon-picture"></span><span>Solicitar Álbum</span></a></li>
+            <li><a href="menuUsuario.html"><span class="icon-user"></span><span>Perfil</span></a></li>
+            <li><a href="index.html"><span class="icon-logout"></span><span>Cerrar Sesión</span></a></li>
+        </ul>
+        <form action="resultado.html" method="get">
+            <input type="text" id="search" name="search" placeholder="Buscar..." required><!--Barra de búsqueda que redirige a resultado-->
+            <button type="submit">Buscar</button>
+        </form>
+    </nav>
+    <section>
+        <h2>Solicitud de impresión de álbum</h2>
+        <div class="texto">
+            <h5>Mediante esta opción puedes solicitar la impresión y envío de uno de tus álbumes a todo color y máxima resolución.</h5>
+            <p>Crea tu propio álbum personalizándolo según tus preferencias.</p>
+        </div>
+        <div>
+            <div id="tablas">
+                <div class="tabla">
+                    <table>
+                        <caption>Tabla de tarifas</caption>
+                        <thead>
+                            <tr>
+                                <th>Concepto</th>
+                                <th>Tarifa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Coste procesamiento y envío</td>
+                                <td>10€</td>
+                            </tr>
+        
+                            <tr>
+                                <td> &lt; 5 páginas</td>
+                                <td>2€/pág.</td>
+                            </tr>
+        
+                            <tr>
+                                <td>Entre 5 y 10 páginas</td>
+                                <td>1,8€/pág.</td>
+                            </tr>
+        
+                            <tr>
+                                <td> > 10 páginas </td>
+                                <td>1,6€/pág.</td>
+                            </tr>
+        
+                            <tr>
+                                <td>Blanco y negro</td>
+                                <td>0€</td>
+                            </tr>
+        
+                            <tr>
+                                <td>Color</td>
+                                <td>0,5€/foto</td>
+                            </tr>
+        
+                            <tr>
+                                <td>Resolución &lt;= 300 DPI</td>
+                                <td>0€/foto</td>
+                            </tr>
+        
+                            <tr>
+                                <td>Resolución > 300 DPI</td>
+                                <td>0,2€/foto</td>
+                            </tr>
+                        </tbody>
+                        
+                        </table>
+                        <p>Si la elección del usuario es en blanco y negro los precios se reducen a la mitad.</p>
+                </div> 
+                <button id="btnTabla">Ver Tabla Avanzada de Precios</button>
+            </div>
+            
+            <form action="respuestaAlbum.html" method="post">
+
+                <h3>Personalización del Álbum</h3>
+                <label for="nombre">Nombre y Apellidos:</label>
+                <input type="text" id="nombre" name="nombre" maxlength="200" required>
+
+                <label for="tituloAlbum">Título del Álbum:</label>
+                <input type="text" id="tituloAlbum" name="tituloAlbum" maxlength="200" required>
+
+                <label for="textoAdicional">Texto adicional:</label>
+                <textarea id="textoAdicional" name="textoAdicional" maxlength="4000" rows="5" cols="50" placeholder="Escribe aquí tu dedicatoria o descripción del álbum (opcional)"></textarea>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" maxlength="200" required>
+
+                <fieldset>
+                <legend>Dirección de envío</legend>
+                <input type="text" id="calle" name="calle" placeholder="Calle" required>
+                <input type="number" id="numero" name="numero" placeholder="Número" required>
+                <input type="text" id="piso" name="piso" placeholder="Piso (opcional)">
+                <input type="text" id="puerta" name="puerta" placeholder="Puerta (opcional)">
+                <input type="number" id="codigoPostal" name="codigoPostal" placeholder="Código Postal" required>
+                <input type="text" id="localidad" name="localidad" placeholder="Localidad" required>
+                <!-- <label for="pais">País:</label> -->
+                    <select id="pais" name="pais">
+                        <option value="" disabled selected>País</option>
+                        <option value="España">España</option>
+                        <option value="México">México</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Chile">Chile</option>
+                        <option value="Perú">Perú</option>
+                        <option value="Estados Unidos">Estados Unidos</option>
+                        <option value="Francia">Francia</option>
+                        <option value="Italia">Italia</option>
+                        <option value="Alemania">Alemania</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    <!-- <label for="provincia">Provincia:</label> -->
+                    <select id="provincia" name="provincia" >
+                        <option value="" disabled selected>Provincia</option>
+                        <option value="Alicante">Alicante</option>
+                        <option value="Valencia">Valencia</option>
+                        <option value="Murcia">Murcia</option>
+                        <option value="Barcelona">Barcelona</option>
+                        <option value="Madrid">Madrid</option>
+                        <option value="Castellón">Castellón</option>
+                        <option value="Granada">Granada</option>
+                        <option value="Sevilla">Sevilla</option>
+                        <option value="Jaén">Jaén</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </fieldset>
+                
+                <label for="telefono">Teléfono (opcional):</label>
+                <input type="number" id="telefono" name="telefono" placeholder="Número de teléfono">
+
+                <div>
+                    <label for="colorPortada">Color de la portada:</label><br>
+                    <input type="color" id="colorPortada" name="colorPortada" value="#000000">
+                </div>
+
+                <label for="copias">Número de copias:</label>
+                <input type="number" id="copias" name="copias" min="1" max="99" value="1" required>
+                <label for="resolution">Resolución de las fotos (DPI):</label>
+                <div class="rango">
+                    <input type="range" id="resolution" name="resolution" min="150" max="900" step="150" value="150" onchange="getValue()">
+                    <span><output id="rangeValue">150</output> DPI</span><br>
+                </div>
+                
+
+                <label for="albumUsuario">Seleccione el álbum de fotos del usuario:</label>
+                <select id="albumUsuario" name="albumUsuario" required>
+                    <option value="" disabled selected>Seleccione un álbum</option>
+                    <option value="album1">Álbum 1</option>
+                    <option value="album2">Álbum 2</option>
+                    <option value="album3">Álbum 3</option>
+                </select>
+
+                <label for="fechaRecepcion">Fecha de recepción deseada (opcional):</label>
+                <input type="date" id="fechaRecepcion" name="fechaRecepcion">
+    
+                <div class="radio-group">
+                    <label>Impresión a color:</label>
+                    <input type="radio" id="impresionColor" name="impresion" value="color" checked> <label for="impresionColor">Color</label>
+                    <input type="radio" id="impresionBN" name="impresion" value="blancoNegro"> <label for="impresionBN">Blanco y Negro</label>
+                </div>
+
+                <button type="submit">Solicitar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Paula Ortuño y Carolina Sánchez</p>
+        <a href="accesibilidad.html">&#8505;  Declaración de accesibilidad</a>
+    </footer>
+    <script>
+        function getValue(){
+                document.getElementById("rangeValue").value = document.getElementById("resolution").value;
+        }
+    </script>
+</body>
+
+</html>

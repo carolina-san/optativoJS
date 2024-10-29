@@ -1,0 +1,6 @@
+@import url('estilo.css');
+@import url('variables/varColoresContraste.css');
+
+section>ul>li>p {
+    color: var(--colorTexto)
+}

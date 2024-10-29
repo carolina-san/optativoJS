@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P&I - Aviso</title>
+    <link rel="stylesheet" href="estilos/estilo.css" media="screen">
+    <link rel="alternate stylesheet" href="estilos/estiloOscuro.css" title="Modo Noche" media="screen">
+    <link rel="alternate stylesheet" href="estilos/estiloAltaLegibilidad.css" title="Alta Legibilidad" media="screen">
+    <link rel="alternate stylesheet" href="estilos/estiloAltoContraste.css" title="Alto Contraste" media="screen">
+    <link rel="alternate stylesheet" href="estilos/contrasteylegibilidad.css" title="Alto Contraste y Legibilidad" media="screen">
+
+    <link rel="stylesheet" href="css/fontello.css">
+</head>
+<body data-url="https://practicadaw.infinityfreeapp.com/avisologin.html">
+    <header>
+        <a href="index.html"><img src="fotos/logodaw.png" alt="Logo de P&I"></a>
+        <a href="index.html"><h1>P&I - Pictures & Images</h1></a>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html"><span class="icon-home"></span><span>Inicio</span></a></li>
+            <li><a href="busqueda.html"><span class="icon-search"></span><span>Búsqueda</span></a></li>
+            <li><a href="login.html"><span class="icon-login"></span><span>Login</span></a></li>
+            <li><a href="registro.html"><span class="icon-registro"></span><span>Registro</span></a></li>
+        </ul>
+        <form action="resultado.html" method="get">
+            <input type="text" id="search" name="search" placeholder="Buscar..." required><!--Barra de búsqueda que redirige a resultado-->
+            <button type="submit">Buscar</button>
+        </form>
+    </nav>
+    <section class="mensaje-error">
+        <div>
+            <h2>¡ERROR!</h2>
+            <h3>No puedes ver los detalles de una foto sin <a href="registro.html">registrarte</a> o <a href="login.html">iniciar sesión</a></h3>
+            <button type="button" onclick="window.location.href='index.html'">Atrás</button>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Paula Ortuño y Carolina Sánchez</p>
+        <a href="accesibilidad.html">&#8505;  Declaración de accesibilidad</a>
+    </footer>
+</body>
+</html>

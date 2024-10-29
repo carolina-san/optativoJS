@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P&I - Búsqueda</title>
+    <link rel="stylesheet" href="estilos/login.css" media="screen">
+    <link rel="alternate stylesheet" href="estilos/loginOscuro.css" title="Modo Noche" media="screen">
+    <link rel="alternate stylesheet" href="estilos/loginAltaLegibilidad.css" title="Alta Legibilidad" media="screen">
+    <link rel="alternate stylesheet" href="estilos/loginAltoContraste.css" title="Alto Contraste" media="screen">
+    <link rel="alternate stylesheet" href="estilos/loginConLeg.css" title="Alto Contraste y Legibilidad" media="screen">
+    <link rel="stylesheet" href="css/fontello.css">
+    <script src="script/archivo.js"></script>
+</head>
+<body data-url="https://practicadaw.infinityfreeapp.com/busqueda.html">
+    <header>
+        <a href="index.html"><img src="fotos/logodaw.png" alt="Logo de P&I"></a>
+        <a href="index.html"><h1>P&I - Pictures & Images</h1></a>
+        <select id="selectorEstilo">
+            <option disabled>Selecciona un Estilo:</option>
+            <option value="Modo Dia">Estilo Predeterminado</option>
+            <option value="Modo Noche">Modo Noche</option>
+            <option value="Alta Legibilidad">Alta Legibilidad</option>
+            <option value="Alto Contraste">Alto Contraste</option>
+            <option value="Alto Contraste y Legibilidad">Alto Contraste y Legibilidad</option>
+        </select>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html"><span class="icon-home"></span><span>Inicio</span></a></li>
+            <li><a href="busqueda.html"><span class="icon-search"></span><span>Búsqueda</span></a></li>
+            <li><a href="login.html"><span class="icon-login"></span><span>Login</span></a></li>
+            <li><a href="registro.html"><span class="icon-registro"></span><span>Registro</span></a></li>
+        </ul>
+        <form action="resultado.html" method="get">
+            <input type="text" id="search" name="search" placeholder="Buscar..." required><!--Barra de búsqueda que redirige a resultado-->
+            <button type="submit">Buscar</button>
+        </form>
+    </nav>
+    <section class="pequeño">
+        <h2>Búsqueda</h2>
+        <form action="resultado.html" method="get" >
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" placeholder="Título de la foto">
+                   
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha">
+                    
+            <label for="pais">País:</label>
+                <select id="pais" name="pais">
+                    <option value="" disabled selected>Selecciona un país</option>
+                        <option value="España">España</option>
+                        <option value="México">México</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Chile">Chile</option>
+                        <option value="Perú">Perú</option>
+                        <option value="Estados Unidos">Estados Unidos</option>
+                        <option value="Francia">Francia</option>
+                        <option value="Italia">Italia</option>
+                        <option value="Alemania">Alemania</option>
+                        <option value="Otro">Otro</option>
+                </select>                    
+                <button type="submit">Buscar</button>
+            </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Paula Ortuño y Carolina Sánchez</p>
+        <a href="accesibilidad.html">&#8505;  Declaración de accesibilidad</a>
+    </footer>
+</body>
+</html>

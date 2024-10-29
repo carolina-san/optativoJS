@@ -1,0 +1,247 @@
+@import url('estilo.css');
+
+/* Estilo para  solicitud */
+body {
+    /*background-color: var(--blanco);*/
+    >section {
+        padding: .8em;
+        background-color: var(--blanco);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 1em;
+        >div{
+            display: flex;
+            flex-direction: column;
+            margin:.5em;
+            >div{
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                justify-content: flex-start;
+                align-items: center;
+                >button{
+                    padding: .8em;
+                    background-color: var(--colorTexto);
+                    color: var(--blanco);
+                    border: none;
+                    border-radius: 5px;
+                    max-width: 250px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease, color 0.3s ease;
+                &:hover {
+                    background-color: var(--colorHoverAzul);
+                    color: var(--colorTexto);
+                }
+                }
+                >div{
+                       
+                    margin: 1em; 
+                    >p{
+                        margin-top:.5em;
+                    }
+                }
+            }
+            
+        }
+        
+        h2{
+            text-align: center;
+            color: var(--colorTexto);
+            margin-bottom: 1em;
+        }
+        h5{
+            font-size: medium;
+        }
+        h5,h3,p{
+            text-align: center;
+        }
+        table{
+            border-collapse: collapse;
+            width:100%;
+            th,td{
+                border: 1px solid #ddd;
+                padding: 5px;
+                text-align: center;
+            }
+            th{
+                background-color: var(--colorHeader);
+                font-weight: bold;
+                color: #333;
+            }
+            td{
+                background-color: #fff;
+            }
+            caption{
+                text-align: center;
+                font-weight: bold;
+                margin:.5em;
+                font-size: large;
+            } 
+        }
+        #tablaTarifas{
+            font-size: small;
+            margin:.5em;
+            height: 100%;
+        }
+        form{
+            text-align: left; 
+            padding: 20px;
+            background-color: var(--colorBackground);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+            margin:1em;
+            flex-grow: 1;
+            h2{
+                text-align: center;
+            }
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            input[type="date"],
+            input[type="number"],
+            input[type="tel"],
+            select,
+            textarea{
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                margin-bottom: 2em;
+                cursor: pointer;
+            }
+            input[type="radio"],input[type="range"],input[type="color"] {
+                cursor: pointer;
+                margin-bottom: 2em;
+            }
+            >button {
+                padding: .8em;
+                background-color: var(--colorTexto);
+                color: var(--blanco);
+                border: none;
+                border-radius: 5px;
+                width:100%;
+                cursor: pointer;
+                transition: background-color 0.3s ease, color 0.3s ease;
+                &:hover {
+                    background-color: var(--colorHoverAzul);
+                    color: var(--colorTexto);
+                }
+            }
+            fieldset {
+                border: 1px solid  var(--colorTexto);  
+                padding: 20px; 
+                margin-bottom: 20px;  
+                border-radius: 5px;  
+                background-color: var(--colorBackground);  
+            }
+            legend {
+                color:  var(--colorTexto);  
+                padding: 0 10px; 
+            }
+            label{
+                margin-bottom: .5em;
+                margin-top: 1em;
+            }
+        }
+        .texto{
+            display: flex;
+            flex-direction: column;
+            padding:.5em;
+            background-color: var(--colorBackground);
+            border-radius: 5px;
+        }
+        .rango{
+            display:flex;
+            flex-direction: row;
+            >span{
+                margin-left:.5em;
+            }
+        }
+    }
+}
+
+.radio-group {
+    display: flex; 
+    align-items: center;
+    gap: 1em; 
+    input[type="radio"] {
+        margin-right: 5px; 
+        cursor: pointer;
+        margin-top:2em;
+    }
+}
+
+.respuesta{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    >ul{ 
+        all: unset;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        max-width: 90%;
+        margin: 2em auto;
+        text-align: center;
+        list-style-type: none;
+        padding: 1.5em;
+        border-radius: 10px;
+        background-color: var(--colorHeader);
+        flex-grow:1;
+        >li{
+            all: unset;
+            margin:.3em;
+                &:hover {
+                    transform: none;
+                    box-shadow: none;  
+                }
+            >span:last-of-type{
+                font-family: var(--fuente2);
+            }
+         }
+    }
+}
+
+body>h2{
+    text-align: center;
+    color: var(--colorTexto);
+    margin: 1em;
+}
+@media all and (width>=665px){
+    body>nav{
+        display:flex;
+        justify-content: space-between;
+    }
+    .respuesta{
+        >ul{
+            max-width: 800px;
+        }
+    }
+    body>section>div>div>#tablaTarifas{
+        font-size: medium;
+        width:100%;
+    }
+   
+}
+
+@media all and (width>=750px){
+    body>section>div{
+        flex-direction: row;
+        
+        >form{
+            max-width: 60%;
+            margin-right:0;
+        }
+    }
+    body>section>div>div>#tablaTarifas{
+        font-size: small;
+        
+    }
+}
+
+@media all and (width>=1250px){
+    body>section>div>div>#tablaTarifas{
+        font-size: medium;
+    }
+}
+

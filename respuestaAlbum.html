@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P&I - Respuesta - Solicitud de Álbum</title>
+    <link rel="stylesheet" href="estilos/album.css" media="screen">
+    <link rel="alternate stylesheet" href="estilos/albumOscuro.css" title="Modo Noche" media="screen">
+    <link rel="alternate stylesheet" href="estilos/albumAltaLegibilidad.css" title="Alta Legibilidad" media="screen">
+    <link rel="alternate stylesheet" href="estilos/albumAltoContraste.css" title="Alto Contraste" media="screen">
+    <link rel="alternate stylesheet" href="estilos/albumConLeg.css" title="Alto Contraste y Legibilidad" media="screen">
+
+    <link rel="stylesheet" href="css/fontello.css">
+    <link rel="stylesheet" href="estilos/estiloImpresion.css" media="print"> 
+    <script src="script/archivo.js"></script>
+</head>
+<body data-url="https://practicadaw.infinityfreeapp.com/respuestaAlbum.html">
+    <header>
+        <a href="logged.html"><img src="fotos/logodaw.png" alt="Logo de P&I"></a>
+        <a href="logged.html"><h1>P&I - Pictures & Images</h1></a>
+        <select id="selectorEstilo">
+            <option disabled>Selecciona un Estilo:</option>
+            <option value="Modo Dia">Estilo Predeterminado</option>
+            <option value="Modo Noche">Modo Noche</option>
+            <option value="Alta Legibilidad">Alta Legibilidad</option>
+            <option value="Alto Contraste">Alto Contraste</option>
+            <option value="Alto Contraste y Legibilidad">Alto Contraste y Legibilidad</option>
+        </select>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html"><span class="icon-home"></span><span>Inicio</span></a></li>
+            <li><a href="busqueda.html"><span class="icon-search"></span><span>Búsqueda</span></a></li>
+            <li><a href="solicitarAlbum.html"><span class="icon-picture"></span><span>Solicitar Álbum</span></a></li>
+            <li><a href="menuUsuario.html"><span class="icon-user"></span><span>Perfil</span></a></li>
+            <li><a href="index.html"><span class="icon-logout"></span><span>Cerrar Sesión</span></a></li>
+        </ul>
+        <form action="resultado.html" method="get">
+            <input type="text" id="search" name="search" placeholder="Buscar..." required><!--Barra de búsqueda que redirige a resultado-->
+            <button type="submit">Buscar</button>
+        </form>
+    </nav>
+    
+    <section class="respuesta">
+        <h2>¡Su solicitud ha sido registrada con éxito!</h2>
+        <p>A continuación se muestra un resumen de los datos ingresados:</p>
+        
+        <ul>
+            <li><strong>Nombre y Apellidos:</strong> <span id="nombre"> Pepe Fernández</span></li>
+            <li><strong>Correo Electrónico:</strong> <span id="email">pepe@gmail.com</span></li>
+            <li><strong>Dirección:</strong> <span id="calle">Calle federico</span></li>
+            <li><strong>Teléfono:</strong> <span id="telefono">673364899</span></li>
+            <li><strong>Título del Álbum:</strong> <span id="tituloAlbum">Finde</span></li>
+            <li><strong>Texto Adicional:</strong> <span id="textoAdicional">Genial</span></li>
+            <li><strong>Color de la Portada:</strong> <span id="colorPortada"><input type="color" name="colorPortada" value="#000" disabled></span></li>
+            <li><strong>Número de Copias:</strong> <span id="copias">4</span></li>
+            <li><strong>Resolución de las Fotos:</strong> <span id="resolucion">300</span> DPI</li>
+            <li><strong>Álbum Seleccionado:</strong> <span id="albumUsuario">Album 1</span></li>
+            <li><strong>Fecha de Recepción Deseada:</strong> <span id="fechaRecepcion">Martes 14 Octubre</span></li>
+            <li><strong>Impresión:</strong> <span id="impresion">Blanco y negro</span></li>
+        </ul>
+        
+        <h3>Coste del Álbum</h3>
+        <p>El coste total del álbum es: <strong>30€</strong></p>
+        
+        <p>Gracias por su solicitud. Nos pondremos en contacto con usted pronto.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Paula Ortuño y Carolina Sánchez</p>
+        <a href="accesibilidad.html">&#8505;  Declaración de accesibilidad</a>
+    </footer>
+</body>
+</html>
