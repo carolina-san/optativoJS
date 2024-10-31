@@ -36,7 +36,11 @@ document.addEventListener("DOMContentLoaded", function(){
         btnTitulo.addEventListener("click", () =>ordenar('titulo'));
         btnAutor.addEventListener("click", () =>ordenar('autor'));
         btnPais.addEventListener("click", () =>ordenar('pais'));
-        botonesOrdenarEstilo();
+        
+        const lista = document.getElementById("resultado-lista");
+        lista.innerHTML = "";
+        crearListaFotos();
+        
     }
     else if(boton!=null){
         crearTablaTarifas();
@@ -327,29 +331,130 @@ function crearTablaTarifas(){
     contenedor.appendChild(table);
 }
 
-function ordenar(criterio) {
+function ordenar(criterio){
     const lista = document.getElementById("resultado-lista");
-    const items = Array.from(lista.children); // Array de <li> elementos
-    console.log('entra:',items);
-    items.sort((a, b) => {
+    let btnFecha = document.querySelector("#btnFecha");
+    let btnTitulo = document.querySelector("#btnTitulo");
+    let btnAutor = document.querySelector("#btnAutor");
+    let btnPais = document.querySelector("#btnPais");
+    const ant = sessionStorage.getItem('criterio');
+    let orden = sessionStorage.getItem('orden');
+    let flecha='';
+    const items = Array.from(lista.children);
+    if(ant!==criterio){
+        btnFecha.classList.remove('activo');
+        btnTitulo.classList.remove('activo');
+        btnAutor.classList.remove('activo');
+        btnPais.classList.remove('activo');
+    }
+    if (ant===criterio&&orden==='desc'){
+        sessionStorage.removeItem('criterio');
+        sessionStorage.removeItem('orden');
+        btnFecha.innerHTML = "Fecha";
+        btnTitulo.innerHTML = "Título";
+        btnAutor.innerHTML = "Autor";
+        btnPais.innerHTML = "País";
+        lista.innerHTML = "";
+        //quitar los botones de activo
+        crearListaFotos();//se crea la lista como estaba
+        btnFecha.classList.remove('activo');
+        btnTitulo.classList.remove('activo');
+        btnAutor.classList.remove('activo');
+        btnPais.classList.remove('activo');
+        return;
+    }else if(ant===criterio && orden==='asc'){
+        orden='desc';
+        flecha='  &#x23F7;';
+    }else{
+        orden='asc';
+        flecha='  &#x23F6;';
+    }
+    btnFecha.innerHTML = "Fecha";
+    btnTitulo.innerHTML = "Título";
+    btnAutor.innerHTML = "Autor";
+    btnPais.innerHTML = "País";
+    
+    if (criterio === 'fecha'){
+        btnFecha.innerHTML += flecha;
+        btnFecha.classList.add('activo');
+    }
+    if (criterio === 'titulo'){
+        btnTitulo.innerHTML += flecha;
+        btnTitulo.classList.add('activo');
+    } 
+    if (criterio === 'autor') {
+        btnAutor.innerHTML += flecha;
+        btnAutor.classList.add('activo');
+    }
+    if (criterio === 'pais'){
+        btnPais.innerHTML += flecha;
+        btnPais.classList.add('activo');
+    }
+
+    items.sort((a, b) =>{
         let valA = a.getAttribute(`data-${criterio}`).toLowerCase();
         let valB = b.getAttribute(`data-${criterio}`).toLowerCase();
-
-        if (criterio === 'fecha') {
-            valA = new Date(valA);
-            valB = new Date(valB);
-            return valA - valB;
+        if (criterio==='fecha'){
+            valA=new Date(valA);
+            valB=new Date(valB);
+            return orden==='asc'?valA-valB:valB-valA;
         }
-        return valA.localeCompare(valB);
+        return orden==='asc'?valA.localeCompare(valB):valB.localeCompare(valA);
     });
-    while (lista.firstChild) {
-        lista.removeChild(lista.firstChild);
-    }
+    lista.replaceChildren();
     items.forEach(item => lista.appendChild(item));
+    sessionStorage.setItem('criterio', criterio);
+    sessionStorage.setItem('orden', orden);
 }
 
 
-function setCookie(c_name, value, expiredays) {
+function crearListaFotos() {
+    const lista = document.getElementById("resultado-lista");
+    const fotos = [
+        { titulo: "Foto A", fecha: "2023-05-20", autor: "Juan Pérez", pais: "España", src: "fotos/foto1.jpg", alt: "Foto 1" },
+        { titulo: "Foto B", fecha: "2021-04-15", autor: "Ana Gómez", pais: "Francia", src: "fotos/foto2.jpg", alt: "Foto 2" },
+        { titulo: "Foto C", fecha: "2022-08-10", autor: "Carlos Ruiz", pais: "Italia", src: "fotos/foto3.jpeg", alt: "Foto 3" }
+    ];
+    
+    fotos.forEach(foto => {
+        const li = document.createElement("li");
+        li.setAttribute("data-titulo", foto.titulo);
+        li.setAttribute("data-fecha", foto.fecha);
+        li.setAttribute("data-autor", foto.autor);
+        li.setAttribute("data-pais", foto.pais);
+
+        // Crear el enlace
+        const link = document.createElement("a");
+        link.href = `foto.html`;
+
+        const img = document.createElement("img");
+        img.src = foto.src;
+        img.alt = foto.alt;
+
+        // Agregar la imagen al enlace
+        link.appendChild(img);
+
+        const h3 = document.createElement("h3");
+        h3.textContent = `Título: ${foto.titulo}`;
+        const pFecha = document.createElement("p");
+        pFecha.textContent = `Fecha: ${foto.fecha}`;
+        const pAutor = document.createElement("p");
+        pAutor.textContent = `Autor: ${foto.autor}`;
+        const pPais = document.createElement("p");
+        pPais.textContent = `País: ${foto.pais}`;
+
+        // Añadir el enlace (con la imagen) y los textos al elemento de lista
+        li.appendChild(link);
+        li.appendChild(h3);
+        li.appendChild(pFecha);
+        li.appendChild(pAutor);
+        li.appendChild(pPais);
+        lista.appendChild(li);
+    });
+}
+
+
+function setCookie(c_name, value, expiredays){
     var exdate = new Date();
     exdate.setDate(exdate.getDate() + expiredays);
     document.cookie = c_name + "=" + escape(value) +
@@ -388,21 +493,5 @@ function aplicarEstilo(estiloSeleccionado) {
     }
 }
 
-function botonesOrdenarEstilo(){
-    const botonesOrdenar = document.querySelectorAll('.ordenar');
 
-    // Añadir evento de clic a cada botón
-    botonesOrdenar.forEach(boton => {
-        boton.addEventListener('click', () => {
-            // Remover la clase 'activo' de todos los botones
-            botonesOrdenar.forEach(btn => btn.classList.remove('activo'));
-            
-            // Añadir la clase 'activo' al botón clicado
-            boton.classList.add('activo');
 
-            // Aquí puedes agregar la lógica para ordenar la lista según el botón
-            // Por ejemplo:
-            // ordenarPor(boton.id);
-        });
-    });
-}

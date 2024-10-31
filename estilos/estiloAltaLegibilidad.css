@@ -20,4 +20,7 @@ body {
     section>ul>li>p{
         font-size: large;
     }
+    section>div>button{
+        font-size: large;
+    }
 }
